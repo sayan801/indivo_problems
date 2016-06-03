@@ -207,7 +207,7 @@ def one_problem(request, problem_id):
         record = parse_xml(content)
         
         # read the document
-        resp, content = client.record_specific_document(record_id=record_id, document_id=problem_id)
+        resp, content = client.record_document(record_id=record_id, document_id=problem_id)
         if resp['status'] != '200':
             # TODO: handle errors
             raise Exception("Error fetching document: %s"%content)
